@@ -10,4 +10,5 @@
 
 ```python
 n = input()
+n = sys.stdin.readline()
 ```
