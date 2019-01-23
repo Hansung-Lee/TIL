@@ -1,28 +1,28 @@
 N, M = map(int, input().split())
 li_H = list(map(int, input().split()))
 
-max_h = max(li_H)
-limit = int(max_h//2)
-center_h = limit
+start = 0
+end = max(li_H)
+center = 0
 tf = False
 
-while limit!=0:
+while start<=end:
     namu = 0
+    center=(start+end)//2
     for h in li_H:
-        if h > center_h:
-            namu = namu + h - center_h
+        if h > center:
+            namu = namu + h - center
     if namu > M:
-        limit = int(limit//2)
-        center_h += limit
+        start=center+1
         tf = False
     elif namu < M:
-        limit = int(limit//2)
-        center_h -= limit
+        end=center-1
         tf = True
     else:
+        tf = False
         break
 
 if tf:
-    print(center_h-1)
+    print(center-1)
 else:
-    print(center_h)
+    print(center)
