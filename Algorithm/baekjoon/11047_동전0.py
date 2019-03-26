@@ -1,20 +1,19 @@
 N, K = map(int, input().split())
-li_N = []
+
+coins = []
+
 for n in range(N):
-    li_N.append(int(input()))
+    coins.append(int(input()))
 
-li_N = li_N[::-1]
+coins = coins[::-1]
 
-result = 0
+cnt = 0
 
-while K!=0:
-    for n in li_N:
-        if K>=n:
-            K=K-n
-            result +=1
-            break
-        else:
-            del li_N[0]
-            break
+for i in range(len(coins)):
+    if K >= coins[i]:
+        cnt += (K//coins[i])
+        K-= (K//coins[i])*coins[i]
+    if K == 0:
+        break
 
-print(result)
+print(cnt)

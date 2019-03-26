@@ -1,6 +1,6 @@
 N = int(input())
 
-for i in range(1,N):
+for i in range(N):
     result = i
     for stri in str(i):
         result += int(stri)
