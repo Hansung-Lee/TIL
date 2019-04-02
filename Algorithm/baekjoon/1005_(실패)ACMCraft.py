@@ -37,4 +37,3 @@ for t in range(T):
     result = time[W-1]
 
     print(result)
-    
